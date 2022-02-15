@@ -7,7 +7,7 @@ class Movie
     public $actors = [];
     public $screenwriter;
     public $production_companies;
-    public $genres;
+    public $genres = [];
     public $hours;
     public $price;
     public $poster;
@@ -92,4 +92,10 @@ class Movie
     }
 }
 
-$book = new Movie('Django Unchained', 'Quentin Tarantino', ['Jamie Foxx',  'Christoph Waltz', 'Leonardo DiCaprio', 'Samuel L. Jackson']);
+$movie = new Movie('Django Unchained', 'Quentin Tarantino', ['Jamie Foxx',  'Christoph Waltz', 'Leonardo DiCaprio', 'Samuel L. Jackson']);
+echo $movie->getTitle();
+
+
+
+$movie2 = new Movie('Seven', 'David Fincher', ['Brad Pitt',  'Kevin Spacey', 'Morgan Freeman']);
+echo $movie2->getTitle();
