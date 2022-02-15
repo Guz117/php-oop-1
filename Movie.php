@@ -12,7 +12,7 @@ class Movie
     public $price;
     public $poster;
 
-    public function __construct($title, $movie_director, $actors)
+    public function __construct(string $title, string $movie_director, array $actors)
     {
         $this->title = $title;
         $this->author = $movie_director;
