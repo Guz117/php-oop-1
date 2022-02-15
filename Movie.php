@@ -93,9 +93,8 @@ class Movie
 }
 
 $movie = new Movie('Django Unchained', 'Quentin Tarantino', ['Jamie Foxx',  'Christoph Waltz', 'Leonardo DiCaprio', 'Samuel L. Jackson']);
-echo $movie->getTitle();
+echo $movie->getMovieDirector();
 
 
 
 $movie2 = new Movie('Seven', 'David Fincher', ['Brad Pitt',  'Kevin Spacey', 'Morgan Freeman']);
-echo $movie2->getTitle();
