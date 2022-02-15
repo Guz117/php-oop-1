@@ -114,11 +114,29 @@ $movie2 = new Movie('Seven', 'David Fincher', ['Brad Pitt',  'Kevin Spacey', 'Mo
 
 <body>
     <?php
-    foreach ($movie as $key => $value) { ?>
-        <?php
-        foreach ($value as $actor) { ?>
-            <p><?= $actor ?></p>
-        <?php } ?>
+    $title = $movie->getTitle();
+    $movieDirector = $movie->getMovieDirector(); ?>
+    <h1><?= $title ?></h1>
+    <h3>Regia di: <?= $movieDirector ?></h3>
+    <?php
+    $actors = $movie->getActors();
+    foreach ($actors as $actor) { ?>
+        <ul>
+            <li><?= $actor ?></li>
+        </ul>
+    <?php } ?>
+
+    <?php
+    $title = $movie2->getTitle();
+    $movieDirector = $movie2->getMovieDirector(); ?>
+    <h1><?= $title ?></h1>
+    <h3>Regia di: <?= $movieDirector ?></h3>
+    <?php
+    $actors = $movie2->getActors();
+    foreach ($actors as $actor) { ?>
+        <ul>
+            <li><?= $actor ?></li>
+        </ul>
     <?php } ?>
 
 </body>
