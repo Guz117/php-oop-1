@@ -68,7 +68,7 @@ class Movie
     {
         return $this->genres;
     }
-    public function setGenres($genres)
+    public function setGenres(array $genres)
     {
         $this->genres = $genres;
     }
@@ -115,9 +115,16 @@ $movie2 = new Movie('Seven', 'David Fincher', ['Brad Pitt',  'Kevin Spacey', 'Mo
 <body>
     <?php
     $title = $movie->getTitle();
-    $movieDirector = $movie->getMovieDirector(); ?>
-    <h1><?= $title ?></h1>
+    $movieDirector = $movie->getMovieDirector();
+    $movie->setGenres(['Western', 'Azione', 'Drammatico', 'Avventura']);
+    $genres = $movie->getGenres(); ?>
+    <h1 style="color: red"><?= $title ?></h1>
     <h3>Regia di: <?= $movieDirector ?></h3>
+    <?php
+    foreach ($genres as $genre) { ?>
+        <h5><?= $genre ?></h5>
+    <?php } ?>
+
     <?php
     $actors = $movie->getActors();
     foreach ($actors as $actor) { ?>
@@ -128,9 +135,15 @@ $movie2 = new Movie('Seven', 'David Fincher', ['Brad Pitt',  'Kevin Spacey', 'Mo
 
     <?php
     $title = $movie2->getTitle();
-    $movieDirector = $movie2->getMovieDirector(); ?>
-    <h1><?= $title ?></h1>
+    $movieDirector = $movie2->getMovieDirector();
+    $movie2->setGenres(['Thriller psicologico', 'Giallo', 'Noir']);
+    $genres = $movie2->getGenres(); ?>
+    <h1 style="color: red"><?= $title ?></h1>
     <h3>Regia di: <?= $movieDirector ?></h3>
+    <?php
+    foreach ($genres as $genre) { ?>
+        <h5><?= $genre ?></h5>
+    <?php } ?>
     <?php
     $actors = $movie2->getActors();
     foreach ($actors as $actor) { ?>
