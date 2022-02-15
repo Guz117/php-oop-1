@@ -41,11 +41,9 @@ class Movie
     {
         return $this->actors;
     }
-    public function setActors($actors)
+    public function setActors(array $actors)
     {
-        foreach ($actors as $actor) {
-            $actor;
-        }
+        $this->actors = $actors;
     }
 
     public function getScreenWriter()
@@ -96,10 +94,33 @@ class Movie
 
 $movie = new Movie('Django Unchained', 'Quentin Tarantino', ['Jamie Foxx',  'Christoph Waltz', 'Leonardo DiCaprio', 'Samuel L. Jackson']);
 
-$movie->setScreenWriter('Quentin');
-echo $movie->getScreenWriter();
 
 
 
 
 $movie2 = new Movie('Seven', 'David Fincher', ['Brad Pitt',  'Kevin Spacey', 'Morgan Freeman']);
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
+    foreach ($movie as $key => $value) { ?>
+        <?php
+        foreach ($value as $actor) { ?>
+            <p><?= $actor ?></p>
+        <?php } ?>
+    <?php } ?>
+
+</body>
+
+</html>
