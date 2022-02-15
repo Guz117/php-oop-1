@@ -15,7 +15,7 @@ class Movie
     public function __construct(string $title, string $movie_director, array $actors)
     {
         $this->title = $title;
-        $this->author = $movie_director;
+        $this->movie_director = $movie_director;
         $this->actors = $actors;
     }
 
@@ -43,7 +43,9 @@ class Movie
     }
     public function setActors($actors)
     {
-        $this->actors = $actors;
+        foreach ($actors as $actor) {
+            $actor;
+        }
     }
 
     public function getScreenWriter()
@@ -93,7 +95,10 @@ class Movie
 }
 
 $movie = new Movie('Django Unchained', 'Quentin Tarantino', ['Jamie Foxx',  'Christoph Waltz', 'Leonardo DiCaprio', 'Samuel L. Jackson']);
-echo $movie->getMovieDirector();
+
+$movie->setScreenWriter('Quentin');
+echo $movie->getScreenWriter();
+
 
 
 
